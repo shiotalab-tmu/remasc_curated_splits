@@ -1,0 +1,22 @@
+Position open split for env4_mix
+両方含む（train/dev/eval内で走行中:停車中の比率を同一にする）
+Split 8/10
+
+Train positions:
+  - Replayed (spoof): [0, 1, 6]
+  - Genuine (bona):   [10, 11, 16, 20, 21, 26]
+
+Dev positions:
+  - Replayed (spoof): [3, 5]
+  - Genuine (bona):   [13, 15, 23, 25]
+
+Eval positions:
+  - Replayed (spoof): [2, 4]
+  - Genuine (bona):   [12, 14, 22, 24]
+
+             train(0,1,6)  dev(3,5)  eval(2,4)
+2 (bona)           1434     576      828
+3 (spoof)          2160     567     831
+bonafide %           39.9      50.4       49.9
+stop (bona)         717     291      411
+run (bona)          717     285      417

@@ -1,0 +1,8 @@
+Position open split for environment 1
+Watchable position: 2, Eval position: 1
+Original counts - P: 645, L: 612, N: 480
+
+            train(pos 2)  dev(pos 2)  eval(pos 1)
+2 (bona)           187.0        47.0        246.0
+3 (spoof)          490.0       122.0        645.0
+bonafide %          27.6        27.8         27.6

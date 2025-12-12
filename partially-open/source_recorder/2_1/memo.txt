@@ -1,0 +1,8 @@
+Source recorder open split
+Train SR: 2, Dev SR: 2, Eval SR: 1
+Original counts - P: 8268, L: 7227, N: 5571
+
+            train(sr 2)  dev(sr 2)  eval(sr 1)
+2 (bona)         2079.0      520.0      3452.0
+3 (spoof)        5782.0     1445.0      7788.0
+bonafide %         26.4       26.5        30.7

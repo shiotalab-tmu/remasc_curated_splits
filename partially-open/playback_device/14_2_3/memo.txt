@@ -1,0 +1,8 @@
+Playback device open split (env1,2,3 only)
+Train PB: (1, 4), Dev PB: 2, Eval PB: 3
+Original counts - Bona: 3213, Spoof: 11457
+
+            train(PB1,4)  dev(PB2)  eval(PB3)
+2 (bona)          1644.0     434.0     1135.0
+3 (spoof)         5859.0    1548.0     4050.0
+bonafide %          21.9      21.9       21.9

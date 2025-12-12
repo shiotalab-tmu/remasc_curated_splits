@@ -1,0 +1,14 @@
+Speaker ID Open Split Pattern 6
+======================================================================
+
+Train speakers (30): [np.int64(1), np.int64(5), np.int64(6), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(16), np.int64(17), np.int64(18), np.int64(20), np.int64(21), np.int64(22), np.int64(24), np.int64(25), np.int64(27), np.int64(28), np.int64(29), np.int64(37), np.int64(38), np.int64(39), np.int64(41), np.int64(42), np.int64(43), np.int64(44), np.int64(45), np.int64(50)]
+Dev speakers (10): [np.int64(4), np.int64(19), np.int64(23), np.int64(31), np.int64(32), np.int64(33), np.int64(35), np.int64(36), np.int64(46), np.int64(47)]
+Eval speakers (9): [np.int64(2), np.int64(3), np.int64(7), np.int64(15), np.int64(26), np.int64(30), np.int64(34), np.int64(48), np.int64(49)]
+
+            train(30spk)   dev(10spk)   eval(9spk)
+2 (bona)     3627.000000  1209.000000  1215.000000
+3 (spoof)    9015.000000  3018.000000  2982.000000
+bonafide %     28.690081    28.601845    28.949249
+
+Split ratios: train=0.6001, dev=0.2007, eval=0.1992
+Error metrics: split_ratio_error=0.001538, bona_ratio_error=0.003813, total_error=0.005351
