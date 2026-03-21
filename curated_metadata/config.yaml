@@ -1,0 +1,122 @@
+common:
+  random_seed: 0
+  meta_file: "../data/remasc/complete/meta.csv"
+  output_dir: "../curated_metadata"
+
+data_cleaning:
+  exclude_tts: true
+  exclude_devices: [1]
+  min_samples_threshold: 10  # threshold tau
+  exclude_conditions:
+    env4_position_0: true
+  virtual_labels:
+    - column: "position id"
+      target: "bonafide"
+      filter:
+        "environment id": 1
+    - column: "source recorder id"
+      target: "bonafide"
+    - column: "playback device id"
+      target: "bonafide"
+
+fully_closed:
+  split_ratio: [3, 1, 1]
+
+partially_open:
+  # Recording Environment
+  environment:
+    enabled: true
+    algorithm: "algorithm3"
+    labels: [1, 2, 3, 4]
+    constraint_K:
+      rtrain: 2
+      rdev: 1
+      reval: 1
+
+  # Playback Device
+  playback_device:
+    enabled: true
+    algorithm: "algorithm3"
+    labels: [1, 2, 3, 4]
+    constraint_K:
+      rtrain: 2
+      rdev: 1
+      reval: 1
+
+  # Replay Source Rec.
+  source_recorder:
+    enabled: true
+    algorithm: "binary_split"
+    labels: [1, 2]
+    constraint_K:
+      dtrain_ddev_ratio: 4
+
+  # Speaker
+  speaker:
+    enabled: true
+    algorithm: "algorithm1_2"
+    labels: null  # auto-detect from data
+    constraint_K:
+      rtrain: 3
+      rdev: 1
+      reval: 1
+    selection:
+      n_select: 15
+      max_iterations: 1000000
+    diversity_M:
+      type: "diversity_score"
+      eutt_threshold: 0.05
+      ebs_threshold: 0.05
+
+  position:
+    # Position (Env1)
+    env1:
+      enabled: true
+      algorithm: "binary_split"
+      labels: [1, 2]
+      constraint_K:
+        dtrain_ddev_ratio: 4
+
+    # Position (Env2)
+    env2:
+      enabled: true
+      algorithm: "algorithm1_2"
+      labels: [11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36]
+      constraint_K:
+        ltrain_min: 6
+        ltrain_max: 16  # len(labels) - 1(dev) - 1(eval)
+        ldev: null       # freely chosen within remaining labels
+      selection:
+        n_select: 15
+        max_iterations: 1000000
+      diversity_M:
+        type: "diversity_score"
+        eutt_threshold: 0.05
+        ebs_threshold: 0.05
+
+    # Position (Env3) - not used
+    env3:
+      enabled: false
+
+    # Position (Env4)
+    # In Env4, bonafide has two-digit labels (vehicle motion + speaker position),
+    # while spoof has single-digit labels (sound source position only).
+    # Splitting uses only the common sound-source position (via modulo 10).
+    # output_normalized: false = output original labels (bonafide=two-digit, spoof=single-digit)
+    #                    true  = output normalized position only (single-digit for both)
+    env4:
+      enabled: true
+      algorithm: "algorithm1_2"
+      labels: [1, 2, 3, 4, 5, 6]
+      output_normalized: false
+      constraint_K:
+        ltrain_min: 3
+        ltrain_max: 4  # len(labels) - 1(dev) - 1(eval)
+        ldev: null
+      selection:
+        n_select: 15
+        max_iterations: 1000000
+      diversity_M:
+        type: "diversity_score"
+        eutt_threshold: 0.2
+        ebs_threshold: 0.2

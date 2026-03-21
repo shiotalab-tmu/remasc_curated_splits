@@ -1,0 +1,14 @@
+[project]
+name = "remasc-curated-splits"
+version = "1.0.0"
+description = "Data cleaning and splitting programs for the ReMASC curated evaluation framework"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "numpy",
+    "pyyaml",
+    "matplotlib",
+]
+
+[tool.uv]
+dev-dependencies = []

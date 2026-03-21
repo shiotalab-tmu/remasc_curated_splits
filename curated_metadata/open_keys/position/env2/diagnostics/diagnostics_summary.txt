@@ -1,0 +1,15 @@
+Condition: env2
+Algorithm: algorithm1_2
+Diversity type: diversity_score
+Thresholds: eutt<=0.05, ebs<=0.05
+
+Total candidates from algorithm1: 1000000
+Candidates passing eutt filter: 6937 (0.69%)
+Candidates passing ebs filter: 25741 (2.57%)
+Candidates passing both filters: 372 (0.04%)
+
+Min eutt: 0.000725
+Min ebs: 0.000753
+Min total_error: 0.015568
+
+Selected by algorithm2: 15 / 15

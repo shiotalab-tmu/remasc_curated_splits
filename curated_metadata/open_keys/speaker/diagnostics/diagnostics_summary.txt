@@ -1,0 +1,15 @@
+Condition: speaker
+Algorithm: algorithm1_2
+Diversity type: diversity_score
+Thresholds: eutt<=0.05, ebs<=0.05
+
+Total candidates from algorithm1: 1000000
+Candidates passing eutt filter: 226263 (22.63%)
+Candidates passing ebs filter: 192708 (19.27%)
+Candidates passing both filters: 43209 (4.32%)
+
+Min eutt: 0.000180
+Min ebs: 0.000110
+Min total_error: 0.006477
+
+Selected by algorithm2: 15 / 15

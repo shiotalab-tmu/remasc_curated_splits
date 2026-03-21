@@ -1,0 +1,322 @@
+============================================================
+Data Cleaning
+============================================================
+Original data count: 44529
+After excluding source_recordings: 39786 (-4743)
+After excluding TTS: 30930 (-8856)
+After excluding D1: 23940 (-6990)
+After excluding Env4 position 0: 22619 (-1321)
+Target devices: [np.int64(2), np.int64(3), np.int64(4)]
+Valid combinations (k_c >= 10): 207
+Balanced data count: 20004
+  D2: Genuine=2017, Spoof=4651
+  D3: Genuine=2017, Spoof=4651
+  D4: Genuine=2017, Spoof=4651
+
+--- assign_virtual_labels: 'position id' ---
+  [Spoof] Original label distribution (n=1257):
+    1: 645 (51.3%)
+    2: 612 (48.7%)
+  [Bona] Original label distribution (n=480):
+    -1: 480 (100.0%)
+  [Virtual] Assigned to 480 bonafide:
+    1: 246 (51.2%)
+    2: 234 (48.8%)
+
+--- assign_virtual_labels: 'source recorder id' ---
+  [Spoof] Original label distribution (n=13953):
+    1: 6726 (48.2%)
+    2: 7227 (51.8%)
+  [Bona] Original label distribution (n=6051):
+    -1: 5571 (92.1%)
+    1: 480 (7.9%)
+  [Virtual] Assigned to 6051 bonafide:
+    1: 2917 (48.2%)
+    2: 3134 (51.8%)
+
+--- assign_virtual_labels: 'playback device id' ---
+  [Spoof] Original label distribution (n=13953):
+    1: 2190 (15.7%)
+    2: 1833 (13.1%)
+    3: 5142 (36.9%)
+    4: 4788 (34.3%)
+  [Bona] Original label distribution (n=6051):
+    -1: 6051 (100.0%)
+  [Virtual] Assigned to 6051 bonafide:
+    1: 950 (15.7%)
+    2: 795 (13.1%)
+    3: 2230 (36.9%)
+    4: 2076 (34.3%)
+Saved: ../curated_metadata/meta_cleaned.csv
+============================================================
+
+============================================================
+Applying Fully-closed split
+============================================================
+  Train: 12012, Dev: 3983, Eval: 4009
+
+============================================================
+Applying Partially-open split: environment
+============================================================
+  Algorithm: algorithm3
+  Labels: [1, 2, 3, 4]
+  Created 12 splits
+
+============================================================
+Applying Partially-open split: playback_device
+============================================================
+  Algorithm: algorithm3
+  Labels: [1, 2, 3, 4]
+  Created 12 splits
+
+============================================================
+Applying Partially-open split: source_recorder
+============================================================
+  Algorithm: binary_split
+  Labels: [1, 2]
+  Created 2 splits
+
+============================================================
+Applying Partially-open split: speaker
+============================================================
+  Algorithm: algorithm1_2
+  Labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+  Checked 10,000, 10000 unique candidates, 23s
+  Checked 20,000, 20000 unique candidates, 46s
+  Checked 30,000, 30000 unique candidates, 69s
+  Checked 40,000, 40000 unique candidates, 92s
+  Checked 50,000, 50000 unique candidates, 115s
+  Checked 60,000, 60000 unique candidates, 137s
+  Checked 70,000, 70000 unique candidates, 160s
+  Checked 80,000, 80000 unique candidates, 182s
+  Checked 90,000, 90000 unique candidates, 205s
+  Checked 100,000, 100000 unique candidates, 227s
+  Checked 110,000, 110000 unique candidates, 249s
+  Checked 120,000, 120000 unique candidates, 271s
+  Checked 130,000, 130000 unique candidates, 293s
+  Checked 140,000, 140000 unique candidates, 315s
+  Checked 150,000, 150000 unique candidates, 338s
+  Checked 160,000, 160000 unique candidates, 360s
+  Checked 170,000, 170000 unique candidates, 382s
+  Checked 180,000, 180000 unique candidates, 404s
+  Checked 190,000, 190000 unique candidates, 426s
+  Checked 200,000, 200000 unique candidates, 448s
+  Checked 210,000, 210000 unique candidates, 470s
+  Checked 220,000, 220000 unique candidates, 492s
+  Checked 230,000, 230000 unique candidates, 514s
+  Checked 240,000, 240000 unique candidates, 536s
+  Checked 250,000, 250000 unique candidates, 558s
+  Checked 260,000, 260000 unique candidates, 580s
+  Checked 270,000, 270000 unique candidates, 602s
+  Checked 280,000, 280000 unique candidates, 625s
+  Checked 290,000, 290000 unique candidates, 646s
+  Checked 300,000, 300000 unique candidates, 668s
+  Checked 310,000, 310000 unique candidates, 690s
+  Checked 320,000, 320000 unique candidates, 713s
+  Checked 330,000, 330000 unique candidates, 735s
+  Checked 340,000, 340000 unique candidates, 757s
+  Checked 350,000, 350000 unique candidates, 779s
+  Checked 360,000, 360000 unique candidates, 801s
+  Checked 370,000, 370000 unique candidates, 823s
+  Checked 380,000, 380000 unique candidates, 845s
+  Checked 390,000, 390000 unique candidates, 867s
+  Checked 400,000, 400000 unique candidates, 889s
+  Checked 410,000, 410000 unique candidates, 912s
+  Checked 420,000, 420000 unique candidates, 934s
+  Checked 430,000, 430000 unique candidates, 956s
+  Checked 440,000, 440000 unique candidates, 978s
+  Checked 450,000, 450000 unique candidates, 1000s
+  Checked 460,000, 460000 unique candidates, 1022s
+  Checked 470,000, 470000 unique candidates, 1044s
+  Checked 480,000, 480000 unique candidates, 1065s
+  Checked 490,000, 490000 unique candidates, 1087s
+  Checked 500,000, 500000 unique candidates, 1110s
+  Checked 510,000, 510000 unique candidates, 1132s
+  Checked 520,000, 520000 unique candidates, 1154s
+  Checked 530,000, 530000 unique candidates, 1176s
+  Checked 540,000, 540000 unique candidates, 1198s
+  Checked 550,000, 550000 unique candidates, 1220s
+  Checked 560,000, 560000 unique candidates, 1241s
+  Checked 570,000, 570000 unique candidates, 1263s
+  Checked 580,000, 580000 unique candidates, 1285s
+  Checked 590,000, 590000 unique candidates, 1307s
+  Checked 600,000, 600000 unique candidates, 1329s
+  Checked 610,000, 610000 unique candidates, 1353s
+  Checked 620,000, 620000 unique candidates, 1375s
+  Checked 630,000, 630000 unique candidates, 1397s
+  Checked 640,000, 640000 unique candidates, 1419s
+  Checked 650,000, 650000 unique candidates, 1440s
+  Checked 660,000, 660000 unique candidates, 1462s
+  Checked 670,000, 670000 unique candidates, 1484s
+  Checked 680,000, 680000 unique candidates, 1506s
+  Checked 690,000, 690000 unique candidates, 1528s
+  Checked 700,000, 700000 unique candidates, 1550s
+  Checked 710,000, 710000 unique candidates, 1572s
+  Checked 720,000, 720000 unique candidates, 1594s
+  Checked 730,000, 730000 unique candidates, 1616s
+  Checked 740,000, 740000 unique candidates, 1640s
+  Checked 750,000, 750000 unique candidates, 1662s
+  Checked 760,000, 760000 unique candidates, 1684s
+  Checked 770,000, 770000 unique candidates, 1706s
+  Checked 780,000, 780000 unique candidates, 1728s
+  Checked 790,000, 790000 unique candidates, 1749s
+  Checked 800,000, 800000 unique candidates, 1771s
+  Checked 810,000, 810000 unique candidates, 1793s
+  Checked 820,000, 820000 unique candidates, 1815s
+  Checked 830,000, 830000 unique candidates, 1837s
+  Checked 840,000, 840000 unique candidates, 1859s
+  Checked 850,000, 850000 unique candidates, 1881s
+  Checked 860,000, 860000 unique candidates, 1903s
+  Checked 870,000, 870000 unique candidates, 1925s
+  Checked 880,000, 880000 unique candidates, 1947s
+  Checked 890,000, 890000 unique candidates, 1969s
+  Checked 900,000, 900000 unique candidates, 1993s
+  Checked 910,000, 910000 unique candidates, 2016s
+  Checked 920,000, 920000 unique candidates, 2038s
+  Checked 930,000, 930000 unique candidates, 2060s
+  Checked 940,000, 940000 unique candidates, 2082s
+  Checked 950,000, 950000 unique candidates, 2104s
+  Checked 960,000, 960000 unique candidates, 2126s
+  Checked 970,000, 970000 unique candidates, 2148s
+  Checked 980,000, 980000 unique candidates, 2170s
+  Checked 990,000, 990000 unique candidates, 2192s
+  Checked 1,000,000, 1000000 unique candidates, 2214s
+  Diagnostics saved: ../curated_metadata/open_keys/speaker/diagnostics
+  Created 15 splits
+
+============================================================
+Applying Partially-open split: env1
+============================================================
+  Algorithm: binary_split
+  Labels: [1, 2]
+  Created 2 splits
+
+============================================================
+Applying Partially-open split: env2
+============================================================
+  Algorithm: algorithm1_2
+  Labels: [11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36]
+  Checked 10,000, 9355 unique candidates, 16s
+  Checked 20,000, 18142 unique candidates, 32s
+  Checked 40,000, 35362 unique candidates, 62s
+  Checked 50,000, 43840 unique candidates, 77s
+  Checked 60,000, 52256 unique candidates, 91s
+  Checked 70,000, 60578 unique candidates, 106s
+  Checked 80,000, 68872 unique candidates, 120s
+  Checked 100,000, 85089 unique candidates, 149s
+  Checked 120,000, 101203 unique candidates, 177s
+  Checked 130,000, 109261 unique candidates, 191s
+  Checked 140,000, 117167 unique candidates, 205s
+  Checked 150,000, 125030 unique candidates, 219s
+  Checked 160,000, 132978 unique candidates, 233s
+  Checked 170,000, 140780 unique candidates, 247s
+  Checked 180,000, 148570 unique candidates, 260s
+  Checked 190,000, 156412 unique candidates, 274s
+  Checked 200,000, 164220 unique candidates, 288s
+  Checked 210,000, 172024 unique candidates, 301s
+  Checked 220,000, 179838 unique candidates, 315s
+  Checked 240,000, 195316 unique candidates, 342s
+  Checked 250,000, 202949 unique candidates, 355s
+  Checked 280,000, 225983 unique candidates, 396s
+  Checked 290,000, 233654 unique candidates, 409s
+  Checked 300,000, 241324 unique candidates, 422s
+  Checked 320,000, 256448 unique candidates, 449s
+  Checked 350,000, 279142 unique candidates, 489s
+  Checked 360,000, 286644 unique candidates, 502s
+  Checked 370,000, 294171 unique candidates, 515s
+  Checked 380,000, 301635 unique candidates, 528s
+  Checked 390,000, 309135 unique candidates, 541s
+  Checked 400,000, 316676 unique candidates, 554s
+  Checked 420,000, 331565 unique candidates, 580s
+  Checked 430,000, 338983 unique candidates, 593s
+  Checked 440,000, 346333 unique candidates, 606s
+  Checked 450,000, 353766 unique candidates, 619s
+  Checked 460,000, 361163 unique candidates, 632s
+  Checked 470,000, 368454 unique candidates, 644s
+  Checked 480,000, 375784 unique candidates, 658s
+  Checked 490,000, 383150 unique candidates, 671s
+  Checked 500,000, 390506 unique candidates, 684s
+  Checked 520,000, 405206 unique candidates, 709s
+  Checked 550,000, 426974 unique candidates, 747s
+  Checked 560,000, 434173 unique candidates, 760s
+  Checked 570,000, 441417 unique candidates, 772s
+  Checked 580,000, 448677 unique candidates, 786s
+  Checked 590,000, 455965 unique candidates, 798s
+  Checked 600,000, 463245 unique candidates, 811s
+  Checked 610,000, 470459 unique candidates, 823s
+  Checked 620,000, 477650 unique candidates, 836s
+  Checked 640,000, 492069 unique candidates, 861s
+  Checked 680,000, 520873 unique candidates, 911s
+  Checked 690,000, 528002 unique candidates, 923s
+  Checked 700,000, 535206 unique candidates, 937s
+  Checked 720,000, 549447 unique candidates, 961s
+  Checked 730,000, 556550 unique candidates, 974s
+  Checked 740,000, 563652 unique candidates, 986s
+  Checked 750,000, 570692 unique candidates, 998s
+  Checked 780,000, 591979 unique candidates, 1035s
+  Checked 790,000, 599103 unique candidates, 1047s
+  Checked 800,000, 606149 unique candidates, 1060s
+  Checked 810,000, 613205 unique candidates, 1072s
+  Checked 820,000, 620302 unique candidates, 1084s
+  Checked 830,000, 627427 unique candidates, 1097s
+  Checked 840,000, 634463 unique candidates, 1109s
+  Checked 860,000, 648480 unique candidates, 1135s
+  Checked 870,000, 655537 unique candidates, 1147s
+  Checked 880,000, 662581 unique candidates, 1159s
+  Checked 890,000, 669641 unique candidates, 1172s
+  Checked 910,000, 683587 unique candidates, 1196s
+  Checked 930,000, 697577 unique candidates, 1220s
+  Checked 940,000, 704516 unique candidates, 1232s
+  Checked 950,000, 711489 unique candidates, 1245s
+  Checked 960,000, 718405 unique candidates, 1257s
+  Checked 980,000, 732430 unique candidates, 1281s
+  Checked 990,000, 739317 unique candidates, 1293s
+  Checked 1,000,000, 746200 unique candidates, 1305s
+  Checked 1,010,000, 753068 unique candidates, 1317s
+  Checked 1,020,000, 760022 unique candidates, 1329s
+  Checked 1,050,000, 780763 unique candidates, 1367s
+  Checked 1,080,000, 801500 unique candidates, 1403s
+  Checked 1,090,000, 808368 unique candidates, 1414s
+  Checked 1,100,000, 815141 unique candidates, 1426s
+  Checked 1,110,000, 822095 unique candidates, 1438s
+  Checked 1,130,000, 835765 unique candidates, 1462s
+  Checked 1,150,000, 849443 unique candidates, 1486s
+  Checked 1,160,000, 856287 unique candidates, 1498s
+  Checked 1,180,000, 869986 unique candidates, 1522s
+  Checked 1,190,000, 876823 unique candidates, 1534s
+  Checked 1,200,000, 883656 unique candidates, 1546s
+  Checked 1,210,000, 890507 unique candidates, 1558s
+  Checked 1,220,000, 897337 unique candidates, 1569s
+  Checked 1,230,000, 904132 unique candidates, 1581s
+  Checked 1,240,000, 910889 unique candidates, 1593s
+  Checked 1,250,000, 917694 unique candidates, 1605s
+  Checked 1,280,000, 938013 unique candidates, 1640s
+  Checked 1,290,000, 944750 unique candidates, 1654s
+  Checked 1,300,000, 951535 unique candidates, 1666s
+  Checked 1,310,000, 958253 unique candidates, 1678s
+  Checked 1,330,000, 971813 unique candidates, 1701s
+  Checked 1,340,000, 978514 unique candidates, 1713s
+  Checked 1,350,000, 985351 unique candidates, 1725s
+  Checked 1,360,000, 992175 unique candidates, 1737s
+  Checked 1,370,000, 998937 unique candidates, 1749s
+  Diagnostics saved: ../curated_metadata/open_keys/position/env2/diagnostics
+  Created 15 splits
+
+============================================================
+Applying Partially-open split: env3
+============================================================
+  Skipped (disabled)
+
+============================================================
+Applying Partially-open split: env4
+============================================================
+  Algorithm: algorithm1_2
+  Labels: [1, 2, 3, 4, 5, 6]
+  All 150 patterns explored
+  Diagnostics saved: ../curated_metadata/open_keys/position/env4/diagnostics
+  Created 15 splits
+
+======================================================================
+Done!
+Output: ../curated_metadata
+======================================================================
