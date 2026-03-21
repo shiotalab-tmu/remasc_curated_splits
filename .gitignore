@@ -1,3 +1,4 @@
 .**
 !.gitignore
 **/diagnostics/all_candidates.csv
+data/
