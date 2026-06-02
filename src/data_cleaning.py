@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright (c) 2026 NTT, Inc.
+# All rights reserved
+# By Takuo Yamaguchi, 2026
 """
 data_cleaning.py - Data cleaning pipeline
 """

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright (c) 2026 NTT, Inc.
+# All rights reserved
+# By Takuo Yamaguchi, 2026
 """
 diagnostics.py - Save diagnostic data during algorithm1_2 execution
 Outputs candidate error distributions and selection logs as CSV.
