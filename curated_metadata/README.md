@@ -67,18 +67,18 @@ Some recording conditions (playback device, replay source recorder, some positio
 The CSV format is based on the [publicly available ReMASC corpus](https://ieee-dataport.org/open-access/remasc-realistic-replay-attack-corpus-voice-controlled-systems).
 
 ```
-file_id, label, env, recorder, source_recorder, speaker, playback_device, position, duration
+file id, speech type id, speaker id, environment id, position id, source recorder id, playback device id, recording device id, recording length
 ```
 
-- **file_id**: File identifier
-- **label**: Audio type (2: bonafide, 3: spoof)
-- **env**: Recording environment
-- **recorder**: Recording device
-- **source_recorder**: Replay source recorder (-1 or pseudo-label for bonafide)
-- **speaker**: Speaker ID
-- **playback_device**: Playback device (-1 or pseudo-label for bonafide)
-- **position**: Position information
-- **duration**: Audio duration (seconds)
+- **file id**: File identifier
+- **speech type id**: Audio type (2: bonafide, 3: spoof)
+- **speaker id**: Speaker ID
+- **environment id**: Recording environment
+- **position id**: Position information
+- **source recorder id**: Replay source recorder (-1 or pseudo-label for bonafide)
+- **playback device id**: Playback device (-1 or pseudo-label for bonafide)
+- **recording device id**: Recording device
+- **recording length**: Audio duration (seconds)
 
 ## Data Splits
 
