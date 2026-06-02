@@ -34,3 +34,9 @@ This package contains programs and metadata for a redesigned evaluation framewor
     • Cleaned and split metadata for fully-closed and partially-open evaluation splits.
     • Code to run data cleaning and splitting pipelines for the ReMASC corpus.
     • Code to visualize diagnostic data from the splitting process.
+
+- OSS List
+    • pandas
+    • NumPy
+    • PyYAML
+    • Matplotlib
