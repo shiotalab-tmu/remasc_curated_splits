@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright (c) 2026 NTT, Inc.
+# All rights reserved
+# By Takuo Yamaguchi, 2026
 """
 visualize_diagnostics.py - Visualize algorithm1_2 diagnostic data
 Auto-detects diagnostics/ directories and generates plots.
