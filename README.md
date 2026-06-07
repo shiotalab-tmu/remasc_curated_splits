@@ -4,6 +4,8 @@
 
 This repository provides metadata and programs for a redesigned evaluation framework based on the [ReMASC](https://www.isca-archive.org/interspeech_2019/gong19_interspeech.html) corpus, enabling fair comparison across recording devices and independent analysis of individual recording conditions.
 
+> **Note:** The SCIS 2026 version is archived on the [`scis2026` branch](https://github.com/shiotalab-tmu/remasc_curated_splits/tree/scis2026).
+
 ## Repository Structure
 
 ```
