@@ -35,4 +35,4 @@ remasc_curated_splits/
 ## References
 
 - ReMASC corpus: [IEEE DataPort](https://ieee-dataport.org/open-access/remasc-realistic-replay-attack-corpus-voice-controlled-systems)
-- Original paper: Gong *et al.*, Interspeech 2019
+- Original paper: [Gong *et al.*, Interspeech 2019](https://www.isca-archive.org/interspeech_2019/gong19_interspeech.html)
